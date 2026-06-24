@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 8th Anniversary Dear Bhaiya Bhabhi❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow:hidden;
+    background:linear-gradient(135deg,#ff416c,#ff4b2b);
+    color:white;
+    text-align:center;
+}
+
+.screen{
+    position:absolute;
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.gift{
+    font-size:120px;
+    cursor:pointer;
+    animation:bounce 1.5s infinite;
+}
+
+@keyframes bounce{
+    50%{transform:translateY(-15px);}
+}
+
+h1{
+    font-size:55px;
+    text-shadow:0 0 20px white;
+}
+
+h2{
+    margin-top:15px;
+    font-size:32px;
+}
+
+p{
+    width:85%;
+    max-width:700px;
+    margin:20px auto;
+    line-height:35px;
+    font-size:20px;
+}
+
+button{
+    padding:15px 40px;
+    border:none;
+    border-radius:40px;
+    font-size:22px;
+    cursor:pointer;
+    background:white;
+    color:#ff416c;
+}
+
+#main{
+    display:none;
+    overflow-y:auto;
+    padding-top:30px;
+}
+
+.slider{
+    width:300px;
+    height:350px;
+    border-radius:20px;
+    overflow:hidden;
+    border:5px solid white;
+    box-shadow:0 0 30px white;
+    margin:25px auto;
+}
+
+.slider img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.heart{
+    position:absolute;
+    color:#ffb6c1;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-100px);
+        opacity:1;
+    }
+    to{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+}
+
+.footer{
+    margin-bottom:50px;
+    font-size:24px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div id="start" class="screen">
+    <div class="gift">🎁</div>
+    <h1>A Special Surprise</h1>
+    <br>
+    <button onclick="openGift()">Open Gift ❤️</button>
+</div>
+
+<div id="main">
+
+    <h1>❤️ Happy 8th Anniversary My Dear Bhaiya jii & Bhabhi jii ❤️</h1>
+
+    <h2>
+        Sachin Kumar Pandit ❤️ Kumari Kanchan
+    </h2>
+
+    <div class="slider">
+        <img id="photo" src="b.jpeg">
+    </div>
+
+    <p>
+        Dear Bhaiya Ji & Bhabhi Ji,<br><br>
+
+        Aap dono ka saath hamesha yun hi bana rahe.
+        Har din nayi khushiyan lekar aaye aur har saal
+        aapka pyaar aur mazboot ho. ❤️
+        <br><br>
+        Bhagwan aap dono ko swasthya, sukh aur samriddhi de.
+    </p>
+
+    <h2>💖 Happy Anniversary 💖</h2>
+
+    <br>
+
+    <div class="footer">
+        — Aapka Chhote Gaurav ❤️
+    </div>
+
+</div>
+
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+function openGift(){
+    document.getElementById("start").style.display="none";
+    document.getElementById("main").style.display="block";
+    document.body.style.overflow="auto";
+    document.getElementById("music").play();
+}
+
+for(let i=0;i<60;i++){
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(20+Math.random()*30)+"px";
+    heart.style.animationDuration=(5+Math.random()*5)+"s";
+    document.body.appendChild(heart);
+}
+
+const photos = [
+    "b.jpeg",
+    "bhaiya jii.jpg",
+    "b1.jpg"
+];
+
+let index = 0;
+
+setInterval(()=>{
+    index++;
+    if(index>=photos.length){
+        index=0;
+    }
+    document.getElementById("photo").src = photos[index];
+},3000);
+
+</script>
+
+</body>
+</html>
